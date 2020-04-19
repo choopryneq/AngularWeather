@@ -2,11 +2,10 @@
   <form>
     <div class="input-group-sm">
       <input class="form-control-sm" type="text" #userCity placeholder="Wprowadź miasto...">
-      <button type="submit" class="btn btn-primary btn-sm" (click)="getWeather(userCity.value)">Szukaj</button>
+      <button type="submit" class="btn btn-primary btn-sm" (click)="getWeather(userCity.value); getForecast(userCity.value)">Szukaj</button>
     </div>
   </form>
 
-  <button type="submit" class="btn btn-primary btn-sm" (click)="getWeatherLoc()">Szukaj</button>
   <div class="temperature">
       {{weather?.main.temp}}°C
   </div>

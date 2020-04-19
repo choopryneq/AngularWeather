@@ -1,25 +1,22 @@
-export interface CityModel {
-  coord: Coord;
-  weather: Weather[];
-  base: string;
-  main: Main;
-  wind: Wind;
-  clouds: Clouds;
+export interface ForecastModel {
+  cod: string;
+  message: number;
+  cnt: number;
+  list: List[];
+}
+
+export interface List {
   dt: number;
+  main: Main;
+  weather: Weather[];
+  clouds: Clouds;
+  wind: Wind;
   sys: Sys;
-  timezone: number;
-  id: number;
-  name: string;
-  cod: number;
+  dt_txt: Date;
 }
 
 export interface Clouds {
   all: number;
-}
-
-export interface Coord {
-  lon: number;
-  lat: number;
 }
 
 export interface Main {
@@ -28,15 +25,14 @@ export interface Main {
   temp_min: number;
   temp_max: number;
   pressure: number;
-  humidity: number;
   sea_level: number;
   grnd_level: number;
+  humidity: number;
+  temp_kf: number;
 }
 
 export interface Sys {
-  country: string;
-  sunrise: number;
-  sunset: number;
+  pod: string;
 }
 
 export interface Weather {

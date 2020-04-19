@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {CityModel} from './model/city.model';
+import {WeatherModel} from './model/weather.model';
 import {DataService} from './service/data.service';
-import {LocationService} from './service/location.service';
+import {ForecastModel} from './model/forecast.model';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +10,14 @@ import {LocationService} from './service/location.service';
 })
 export class AppComponent implements OnInit {
 
-  weather: CityModel;
+  weather: WeatherModel;
+  forecast: ForecastModel;
 
-  constructor(private dataService: DataService, private locationService: LocationService) {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    return this.dataService.getWeather('Słupsk').subscribe(data => {
-      this.weather = data;
-    });
+    this.getWeather('Słupsk');
+    this.getForecast('Słupsk');
   }
 
   getWeather(location) {
@@ -26,12 +26,10 @@ export class AppComponent implements OnInit {
     });
   }
 
-  getWeatherLoc() {
-    return this.locationService.getPosition().then(res => {
-      console.log(`Positon: ${res.lng} ${res.lat}`);
-      this.dataService.getWeatherLoc(res.lng, res.lat).subscribe(data => {
-        this.weather = data;
-      });
+  getForecast(location) {
+    this.dataService.getForecast(location).subscribe(data => {
+      this.forecast = data;
+      console.log(data);
     });
   }
 }

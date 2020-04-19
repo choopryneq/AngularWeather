@@ -1,7 +1,7 @@
 {
-  "name": "OpenWeather Angular",
-  "version": "1.0",
-  "description": "POGCZMAN POGODA EDITED MADE CONFIRMED BY MTSH",
+  "name": "OpenWeather Angular Widget",
+  "version": "1.0.0",
+  "description": "Aktualna pogoda + prognoza na 5 dni",
   "manifest_version": 2,
   "browser_action": {
     "default_popup": "index.html"
