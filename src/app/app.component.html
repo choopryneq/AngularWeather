@@ -1,0 +1,43 @@
+<div class="weather-card">
+  <form>
+    <div class="input-group-sm">
+      <input class="form-control-sm" type="text" #userCity placeholder="Wprowadź miasto...">
+      <button type="submit" class="btn btn-primary btn-sm" (click)="getWeather(userCity.value)">Szukaj</button>
+    </div>
+  </form>
+
+  <button type="submit" class="btn btn-primary btn-sm" (click)="getWeatherLoc()">Szukaj</button>
+  <div class="temperature">
+      {{weather?.main.temp}}°C
+  </div>
+
+  <div class="city">
+      {{weather?.name}}, {{weather?.sys.country}}
+  </div>
+
+  <div class="pressure">
+    <h4>{{weather?.main.pressure}}</h4>
+    <p>Ciśnienie (hPa)</p>
+  </div>
+
+  <div class="humidity">
+    <h4>{{weather?.main.humidity}}</h4>
+    <p>Wilgotnosć (%)</p>
+  </div>
+
+  <div class="speed">
+    <h4>{{weather?.wind.speed}}</h4>
+    <p>Wiatr (m/s)</p>
+  </div>
+
+  <div class="sunrise">
+    <h4>{{weather?.sys.sunrise *1000 | date: 'HH:mm:ss'}}</h4>
+    <p>Wschód</p>
+  </div>
+
+  <div class="sunset">
+    <h4>{{weather?.sys.sunset *1000 | date: 'HH:mm:ss'}}</h4>
+    <p>Zachód</p>
+  </div>
+
+</div>

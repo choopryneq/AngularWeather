@@ -1,0 +1,68 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+form input {
+  background-color: #293251;
+  color: #fff;
+  border: 1px solid #5297DC;
+  width: 75%;
+}
+
+form button {
+  margin-left: 5px;
+  font-weight: 600;
+  float: right;
+}
+
+.weather-card {
+  padding: 10px;
+  color: #fff;
+  background-color: #293251;
+}
+
+.temperature {
+  font-size: 2.5rem;
+  color: #5297DC;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.city {
+  margin-top: -15px!important;
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.pressure, .humidity, .speed {
+  width: 100px;
+  border-radius: 5px;
+  margin: 3px;
+  background-color: #384266;
+  text-align: center;
+  display: inline-block;
+}
+
+.sunrise, .sunset {
+  width: 153px;
+  border-radius: 5px;
+  margin: 3px;
+  background-color: #384266;
+  text-align: center;
+  display: inline-block;
+}
+
+h4 {
+  color: #5297DC;
+  font-weight: 600;
+  margin: 0;
+  padding: 2px;
+  font-size: 18px;
+}
+
+p {
+  margin: 0;
+  font-size: 12px;
+}
